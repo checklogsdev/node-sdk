@@ -1,0 +1,28 @@
+{
+  "name": "@checklogs/node-sdk",
+  "version": "1.0.0",
+  "description": "Simple logs monitoring",
+  "main": "src/main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "exemple/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/checklogsdev/node-sdk.git"
+  },
+  "keywords": [
+    "logs",
+    "monitoring",
+    "node-sdk",
+    "simple"
+  ],
+  "author": "Cut0x",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/checklogsdev/node-sdk/issues"
+  },
+  "homepage": "https://github.com/checklogsdev/node-sdk#readme"
+}

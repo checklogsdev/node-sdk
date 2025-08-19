@@ -1,6 +1,6 @@
 {
   "name": "@checklogs/node-sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Official Node.js SDK for CheckLogs.dev - Log monitoring system",
   "main": "index.js",
   "module": "index.mjs",

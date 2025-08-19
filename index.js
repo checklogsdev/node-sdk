@@ -3,10 +3,13 @@
  * Official Node.js SDK for CheckLogs.dev
  */
 
-const CheckLogsClient = require('./lib/client');
-const CheckLogsLogger = require('./lib/logger');
-const CheckLogsStats = require('./lib/stats');
-const { CheckLogsError, ValidationError, ApiError, NetworkError } = require('./lib/errors');
+// Correct import syntax for ES modules with default exports
+const CheckLogsClient = require('./lib/client.mjs').default;
+const CheckLogsLogger = require('./lib/logger.mjs').default;
+const CheckLogsStats = require('./lib/stats.mjs').default;
+
+// Named exports from errors.mjs
+const { CheckLogsError, ValidationError, ApiError, NetworkError } = require('./lib/errors.mjs');
 
 /**
  * Create a new CheckLogs client instance

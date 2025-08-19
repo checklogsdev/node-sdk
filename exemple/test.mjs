@@ -1,5 +1,5 @@
-// CommonJS example
-const { createLogger } = require('../index.js');
+// ES Module example
+import { createLogger } from '../index.mjs';
 
 async function testLogger() {
   // Create a logger instance

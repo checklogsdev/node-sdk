@@ -8,7 +8,23 @@ Official Node.js SDK for CheckLogs.dev - A powerful log monitoring system.
 npm install @checklogs/node-sdk
 ```
 
+### Quick Start Setup
+
+For a guided setup, you can use our quick-start script:
+
+```bash
+npx @checklogs/node-sdk quick-start
+```
+
+This will:
+- Detect your project type (CommonJS or ES Modules)
+- Create appropriate test files
+- Set up a basic configuration
+- Provide next steps to get you started
+
 ## Quick Start
+
+### CommonJS (require)
 
 ```javascript
 const { createLogger } = require('@checklogs/node-sdk');
@@ -21,9 +37,34 @@ await logger.info('Application started');
 await logger.error('Something went wrong', { error_code: 500 });
 ```
 
+### ES Modules (import)
+
+```javascript
+import { createLogger } from '@checklogs/node-sdk';
+
+// Create a logger instance
+const logger = createLogger('your-api-key-here');
+
+// Log messages
+await logger.info('Application started');
+await logger.error('Something went wrong', { error_code: 500 });
+```
+
+**Note**: The SDK supports both CommonJS and ES modules. Use the import/export syntax you prefer!
+
+## Module Support
+
+This package supports both CommonJS and ES modules:
+
+- **CommonJS**: Use `require()` syntax - works in traditional Node.js projects
+- **ES Modules**: Use `import/export` syntax - works in modern Node.js projects with `"type": "module"` in package.json or `.mjs` files
+
+The package automatically provides the correct format based on how you import it.
+
 ## Features
 
 - ✅ Full API coverage (logging, retrieval, statistics)
+- ✅ Dual package support (CommonJS & ES Modules)
 - ✅ TypeScript support with complete type definitions
 - ✅ Automatic retry mechanism with exponential backoff
 - ✅ Enhanced logging with metadata (hostname, process info, timestamps)
@@ -37,11 +78,22 @@ await logger.error('Something went wrong', { error_code: 500 });
 
 ### Basic Client
 
+**CommonJS:**
 ```javascript
 const { CheckLogsClient } = require('@checklogs/node-sdk');
 
 const client = new CheckLogsClient('your-api-key');
+```
 
+**ES Modules:**
+```javascript
+import { CheckLogsClient } from '@checklogs/node-sdk';
+
+const client = new CheckLogsClient('your-api-key');
+```
+
+**Usage:**
+```javascript
 // Send a log
 await client.log({
   message: 'User logged in',
@@ -59,9 +111,18 @@ const logs = await client.getLogs({
 
 ### Enhanced Logger
 
+**CommonJS:**
 ```javascript
 const { CheckLogsLogger } = require('@checklogs/node-sdk');
+```
 
+**ES Modules:**
+```javascript
+import { CheckLogsLogger } from '@checklogs/node-sdk';
+```
+
+**Usage:**
+```javascript
 const logger = new CheckLogsLogger('your-api-key', {
   source: 'my-app',
   defaultContext: { version: '1.0.0' },
@@ -255,6 +316,7 @@ await logger.log(logData);
 
 ### Express.js Middleware
 
+**CommonJS version:**
 ```javascript
 const express = require('express');
 const { createLogger } = require('@checklogs/node-sdk');
@@ -291,6 +353,17 @@ app.get('/users/:id', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+```
+
+**ES Modules version:**
+```javascript
+import express from 'express';
+import { createLogger } from '@checklogs/node-sdk';
+
+const app = express();
+const logger = createLogger('your-api-key');
+
+// ... rest of the code is identical ...
 ```
 
 ### Cron Job Monitoring
@@ -331,6 +404,6 @@ MIT License - see LICENSE file for details.
 
 ## Support
 
-- Documentation: [https://docs.checklogs.dev](https://checklogs.dev/docs)
+- Documentation: [https://docs.checklogs.dev](https://docs.checklogs.dev)
 - Issues: [GitHub Issues](https://github.com/checklogs/node-sdk/issues)
-- Email: contact@checklogs.dev
+- Email: support@checklogs.dev

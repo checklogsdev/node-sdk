@@ -1,28 +1,56 @@
 {
   "name": "@checklogs/node-sdk",
   "version": "1.0.0",
-  "description": "Simple logs monitoring",
-  "main": "src/main.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "scripts": {
-    "test": "exemple/test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/checklogsdev/node-sdk.git"
+  "description": "Official Node.js SDK for CheckLogs.dev - Log monitoring system",
+  "main": "index.js",
+  "module": "index.mjs",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./types/index.d.ts"
+    }
   },
   "keywords": [
-    "logs",
+    "logging",
     "monitoring",
-    "node-sdk",
-    "simple"
+    "checklogs",
+    "sdk",
+    "api",
+    "nodejs"
   ],
-  "author": "Cut0x",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/checklogsdev/node-sdk/issues"
+  "author": "checklogs.dev",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/checklogs/node-sdk.git"
   },
-  "homepage": "https://github.com/checklogsdev/node-sdk#readme"
+  "bugs": {
+    "url": "https://github.com/checklogs/node-sdk/issues"
+  },
+  "homepage": "https://checklogs.dev",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "quick-start": "node scripts/quick-start.js"
+  },
+  "files": [
+    "index.js",
+    "index.mjs",
+    "lib/",
+    "types/",
+    "scripts/",
+    "examples/",
+    "README.md",
+    "TROUBLESHOOTING.md"
+  ]
 }

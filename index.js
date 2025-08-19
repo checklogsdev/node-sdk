@@ -3,10 +3,10 @@
  * Official Node.js SDK for CheckLogs.dev
  */
 
-const CheckLogsClient = require('../lib/client');
-const CheckLogsLogger = require('../lib/logger');
-const CheckLogsStats = require('../lib/stats.js');
-const { CheckLogsError, ValidationError, ApiError, NetworkError } = require('../lib/errors');
+const CheckLogsClient = require('./lib/client');
+const CheckLogsLogger = require('./lib/logger');
+const CheckLogsStats = require('./lib/stats');
+const { CheckLogsError, ValidationError, ApiError, NetworkError } = require('./lib/errors');
 
 /**
  * Create a new CheckLogs client instance

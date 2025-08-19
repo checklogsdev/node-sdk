@@ -1,0 +1,20 @@
+{
+  "name": "@checklogs/node-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Logs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/checklogsdev/node-sdk.git"
+  },
+  "keywords": [],
+  "author": "Cut0x",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/checklogsdev/node-sdk/issues"
+  },
+  "homepage": "https://github.com/checklogsdev/node-sdk#readme"
+}
